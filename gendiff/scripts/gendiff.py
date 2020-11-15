@@ -3,6 +3,7 @@
 
 
 import argparse
+import json
 
 
 def main():
@@ -14,14 +15,7 @@ def main():
 #                    const=sum, default=max,
 #                    help='sum the integers (default: find the max)')
    
-    parser.add_argument('-f FORMAT', '--format FORMAT',
-#                    dest='',
-#                    action='',
-#                     nargs='?',
-#                    default='plain',
-                   choices='',
-#                    ['plain', 'pretty', 'JSON'],
-                    help='set format of output')
+    parser.add_argument('-f', '--format', help='set format of output')
 
     parser.add_argument('first_file',
                     type=argparse.FileType('r'))
@@ -29,6 +23,9 @@ def main():
                     type=argparse.FileType('r'))
     args = parser.parse_args()
     print(args.accumulate(args.integers))
+
+#def  generate_diff():
+
 
 
 if __name__ == '__main__':
